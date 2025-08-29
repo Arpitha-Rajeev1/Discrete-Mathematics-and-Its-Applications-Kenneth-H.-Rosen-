@@ -1,0 +1,25 @@
+Given two bit strings of length n, find the bitwise AND, bitwise OR, and bitwise XOR of these strings.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    string a, b;
+    cin >> a >> b;
+    n = a.size();
+    string res1, res2, res3;
+    for (int i = 0; i < n; i++) {
+        int bitA = a[i] - '0';
+        int bitB = b[i] - '0';
+        // when '0' is added to integer, it first converts to ASCII code and then adds it to integer: 0 + '0' = 0 + 48 = 48
+        // char(48) is character 0, similarly for 1 + '0' = 49
+        res1 += char((bitA & bitB) + '0');
+        res2 += char((bitA | bitB) + '0');
+        res3 += char((bitA ^ bitB) + '0');
+    }
+    cout << "AND: " << res1 << endl;
+    cout << "OR : " << res2 << endl;
+    cout << "XOR: " << res3 << endl;
+    return 0;
+}
