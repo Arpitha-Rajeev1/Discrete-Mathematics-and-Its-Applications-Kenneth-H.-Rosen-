@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    bool p, q;
+    cin >> p >> q;
+    bool conjunction = p && q;
+    bool disjunction = p || q;
+    bool exor = p != q;           // XOR
+    bool implication = !p || q;   // p → q
+    bool biconditional = p == q;  // p ↔ q
+
+    cout << "Conjunction (p AND q): " << conjunction << endl;
+    cout << "Disjunction (p OR q): " << disjunction << endl;
+    cout << "XOR (p XOR q): " << exor << endl;
+    cout << "Implication (p -> q): " << implication << endl;
+    cout << "Biconditional (p <-> q): " << biconditional << endl;
+    return 0;
+}
