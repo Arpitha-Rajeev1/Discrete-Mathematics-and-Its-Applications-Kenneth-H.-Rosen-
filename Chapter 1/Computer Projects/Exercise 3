@@ -1,0 +1,20 @@
+Give a compound proposition, determine whether it is satisfiable by checking its truth value for all positive assignments of truth values to its propositional variables
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    bool satisfiable = false;
+    // Compound proposition: (p ∨ q) ∧ (¬p ∨ r)
+    for (int p = 0; p <= 1; p++) {
+        for (int q = 0; q <= 1; q++) {
+            for(int r = 0; r <= 1; r++) {
+                satisfiable = (p || q) && (!p || r);
+                if (satisfiable) break;
+            }
+        }
+    }
+    if (satisfiable) cout << "It is satisfiable";
+    else cout << "It is not satisfiable";
+    return 0;
+}
