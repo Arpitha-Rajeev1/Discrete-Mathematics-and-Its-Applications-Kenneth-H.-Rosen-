@@ -1,0 +1,12 @@
+Given the truth values of the propositions p and q in fuzzy logic, find the truth value of the disjunction and the conjunction of p and q
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double p, q;
+    cin >> p >> q;
+    cout << "AND: " << min(p, q) << endl;
+    cout << "OR : " << max(p, q) << endl;
+    return 0;
+}
