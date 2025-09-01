@@ -1,0 +1,40 @@
+Given positive integers m and n, interactively play the game of Chomp
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int m = 4, n = 4;
+    vector<vector<int>> matrix(m, vector<int>(n, 1));
+    
+    bool firstPlayer = true;
+    int p, q;
+    while (true) {
+        if (firstPlayer) {
+            cout << "First Player: ";
+            cin >> p >> q;
+        } else {
+            cout << "Second Player: ";
+            cin >> p >> q;
+        }
+        if (p == 0 && q == 0) break;
+        if (matrix[p][q] == 0) {
+            continue;
+        }
+        firstPlayer = !firstPlayer;
+        for (int i = p; i < m; i++) {
+            for (int j = q; j < n; j++) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    
+    if (firstPlayer) {
+        cout << "First Player has lost";
+    } else {
+        cout << "Second Player has lost";
+    }
+    
+    return 0;
+}
